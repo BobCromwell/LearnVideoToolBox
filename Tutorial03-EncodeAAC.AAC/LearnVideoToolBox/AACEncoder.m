@@ -56,6 +56,8 @@
     outAudioStreamBasicDescription.mChannelsPerFrame = 1; // 声道数
     outAudioStreamBasicDescription.mBitsPerChannel = 0; // 压缩格式设置为0
     outAudioStreamBasicDescription.mReserved = 0; // 8字节对齐，填0.
+    outAudioStreamBasicDescription.mSampleRate = 16000;
+  
     AudioClassDescription *description = [self
                                           getAudioClassDescriptionWithType:kAudioFormatMPEG4AAC
                                           fromManufacturer:kAppleSoftwareAudioCodecManufacturer]; //软编
