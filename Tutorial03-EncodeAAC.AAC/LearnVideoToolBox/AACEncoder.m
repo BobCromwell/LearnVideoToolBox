@@ -64,6 +64,14 @@
     if (status != 0) {
         NSLog(@"setup converter: %d", (int)status);
     }
+  
+  UInt32 ulBitRate = (UInt32)32000;
+  UInt32 ulSize = sizeof(ulBitRate);
+  status = AudioConverterSetProperty(_audioConverter, kAudioConverterEncodeBitRate, ulSize, & ulBitRate);
+  if (status != noErr) {
+    NSLog(@"AAC Audio Converter set bit rate failed, error code = %@", @(status));
+  }
+
 }
 
 /**
